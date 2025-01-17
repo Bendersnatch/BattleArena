@@ -1,12 +1,20 @@
 package battlearena;
 
 public class Enemy {
+    private int id;
     private int healthPoints;
     private int attackDamage;
+    private static int numberOfEnemies;
 
     public Enemy( int healthPoints, int attackDamage) {
         this.healthPoints = healthPoints;
         this.attackDamage = attackDamage;
+        numberOfEnemies++;
+        this.id = numberOfEnemies;
+    }
+
+    public void specialAttack(){
+        System.out.println("nemico non ha un attacco speciale");
     }
 
     public int getHealthPoints() {
@@ -20,6 +28,14 @@ public class Enemy {
     }
     public void setAttackDamage(int attackDamage) {
         this.attackDamage = attackDamage;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getNumberOfEnemies(){
+        return numberOfEnemies;
     }
 
     public void talk() {
