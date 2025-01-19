@@ -3,11 +3,13 @@ package battlearena;
 public class Enemy {
     private int id;
     private int healthPoints;
+    private int healthPointsRemaining;
     private int attackDamage;
     private static int numberOfEnemies;
 
     public Enemy( int healthPoints, int attackDamage) {
         this.healthPoints = healthPoints;
+        this.healthPointsRemaining = healthPoints;
         this.attackDamage = attackDamage;
         numberOfEnemies++;
         this.id = numberOfEnemies;
@@ -30,6 +32,14 @@ public class Enemy {
         this.attackDamage = attackDamage;
     }
 
+    public int getHealthPointsRemaining(){
+        return healthPointsRemaining;
+    }
+
+    public void setHealthPointsRemaining(int healthPointsRemaining){
+        this.healthPointsRemaining = healthPointsRemaining;
+    }
+
     public int getId() {
         return id;
     }
@@ -45,7 +55,7 @@ public class Enemy {
         System.out.println(" viene contro di te!");
     }
     public void attack(){
-        System.out.println( " ti infligge " + attackDamage + "di danni!");
+        System.out.println( "ti infligge " + attackDamage + "di danni!");
     }
 
     public class Zombie extends Enemy {
