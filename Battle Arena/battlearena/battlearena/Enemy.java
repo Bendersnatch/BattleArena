@@ -44,7 +44,7 @@ public class Enemy {
         return id;
     }
 
-    public int getNumberOfEnemies(){
+    public static int getNumberOfEnemies(){
         return numberOfEnemies;
     }
 
@@ -55,7 +55,7 @@ public class Enemy {
         System.out.println(" viene contro di te!");
     }
     public void attack(){
-        System.out.println( "ti infligge " + attackDamage + "di danni!");
+        System.out.println( "ti infligge " + attackDamage + " di danni!");
     }
 
     public class Zombie extends Enemy {
