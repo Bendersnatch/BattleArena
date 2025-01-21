@@ -1,6 +1,6 @@
 package battlearena;
 
-public class Enemy {
+public class Enemy implements IEnemy {
     private int id;
     private int healthPoints;
     private int healthPointsRemaining;
@@ -14,32 +14,37 @@ public class Enemy {
         numberOfEnemies++;
         this.id = numberOfEnemies;
     }
-
+    @Override
     public void specialAttack(){
         System.out.println("nemico non ha un attacco speciale");
     }
 
+    @Override
     public int getHealthPoints() {
         return healthPoints;
     }
-    public void setHealthPoints(int healthPoints) {
-        this.healthPoints = healthPoints;
-    }
+
+    @Override
     public int getAttackDamage() {
         return attackDamage;
     }
+
+    @Override
     public void setAttackDamage(int attackDamage) {
         this.attackDamage = attackDamage;
     }
 
+    @Override
     public int getHealthPointsRemaining(){
         return healthPointsRemaining;
     }
 
+    @Override
     public void setHealthPointsRemaining(int healthPointsRemaining){
         this.healthPointsRemaining = healthPointsRemaining;
     }
 
+    @Override
     public int getId() {
         return id;
     }
@@ -48,36 +53,18 @@ public class Enemy {
         return numberOfEnemies;
     }
 
+    @Override
     public void talk() {
         System.out.println("Sono tuo nemico, preparati!");
     }
-    public void walkForward() {
-        System.out.println(" viene contro di te!");
-    }
+    
+
+    @Override
     public void attack(){
         System.out.println( "ti infligge " + attackDamage + " di danni!");
     }
 
-    public class Zombie extends Enemy {
-        public Zombie(int healthPoints, int attackDamage){
-            super(healthPoints, attackDamage);
-        }
-        public void talk() {
-            System.out.println("Cervelloooo?! urla lo " + ". Ti sta attaccando!");
-        }
-        public void spreadVenom() {
-            System.out.println("Zombie cerca ad atacarti il coviddi!");
-        }
-    }
 
-    public class Ogre extends Enemy {
-        public Ogre(int healthPoints, int attackDamage) {
-            super(healthPoints, attackDamage);
-        }
-        public void talk(){
-            System.out.println("WAAAAAGHH!, urla l'ogro sputtando la saliva...");
-        }
-    }
 
 }
 
