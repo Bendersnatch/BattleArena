@@ -1,6 +1,6 @@
 package battlearena;
 
-public class Ogre extends Enemy{
+public class Ogre extends Enemy implements IOgre{
     public Ogre(int healthPoints, int attackDamage){
         super(healthPoints, attackDamage);
     }
@@ -17,5 +17,10 @@ public class Ogre extends Enemy{
             setAttackDamage(getAttackDamage() + 4);
             System.out.println("Ogre va in ira e va in carica!");
         }
+    }
+
+    @Override
+    public void stareDown(){
+        System.out.println("l'Ogre ti guarda con il disprezzo");
     }
 }
