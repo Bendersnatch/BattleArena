@@ -6,6 +6,9 @@ public class Main {
         Zombie zombie = new Zombie( 10, 1);
         Ogre ogre = new Ogre(20, 3);
 
+        zombie.battleStance();
+        ogre.stareDown();
+        
         battle(zombie, ogre);
     }
 
