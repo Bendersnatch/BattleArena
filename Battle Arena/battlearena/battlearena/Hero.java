@@ -29,4 +29,25 @@ public class Hero implements IHero{
         this.healthPointsRemaining = healthPointsRemaining;
     }
 
-}
+    @Override
+    public int getAttackDamage(){
+        return attackDamage;
+    }
+
+    @Override
+    public Weapon getWeapon(){
+        return weapon;
+    }
+
+    @Override
+    public void setWeapon(Weapon weapon){
+        this.weapon = weapon;
+    }
+
+    @Override
+    public void equipWeapon(){
+        if(getWeapon() != null && !isWeaponEquipped()){
+            setAttackDamage(getAttackDamage() + weapon.getAttackIncrease());
+            setWeaponEquipped(true);
+        }
+    }
