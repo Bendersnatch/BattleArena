@@ -51,3 +51,25 @@ public class Hero implements IHero{
             setWeaponEquipped(true);
         }
     }
+
+    @Override
+    public boolean isWeaponEquipped(){
+        return isWeaponEquipped;
+    }
+
+    @Override
+    public void setWeaponEquipped(boolean isWeaponEquipped){
+        this.isWeaponEquipped = isWeaponEquipped;
+    }
+
+    @Override
+    public void setAttackDamage(int attackDamage){
+        this.attackDamage = attackDamage;
+    }
+
+    @Override
+    public void attack(){
+        System.out.println("Eroe attacca con" + attackDamage + " punti di danno.");
+    }
+
+}
